@@ -30,9 +30,9 @@
         <td th:text="${user.getLastName}">lastName</td>
         <td th:text="${user.getUsername()}">username</td>
         <td th:text="${user.getPassword()}">password</td>
-
-        <td th:each="role: ${user.getRoles()}" th:text="${role.getName()}">role</td>
-
+        <td>
+            <ul th:each="role: ${user.getRoles()}" th:text="${role.getName()}">role</ul>
+        </td>
         <td>
             <form th:method="GET" th:action="@{/admin/user-update/{id}(id=${user.id})}">
                 <button type="submit" class="btn btn-primary">Edit</button>

@@ -30,9 +30,13 @@ public class Init {
         roleService.save(new Role("ROLE_USER"));
         Set<Role> adminRole = new HashSet<>();
         Set<Role> userRole = new HashSet<>();
+        Set<Role> allRoles = new HashSet<>();
         adminRole.add(roleService.findById(1L));
         userRole.add(roleService.findById(2L));
+        allRoles.add(roleService.findById(1L));
+        allRoles.add(roleService.findById(2L));
         userService.save(new User("Misha", "Adminov", "admin","admin", adminRole));
         userService.save(new User("Serega", "Userov", "user","user", userRole));
+        userService.save(new User("Vitya", "VseRolev", "text","test", allRoles));
     }
 }
